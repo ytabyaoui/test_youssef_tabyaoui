@@ -10,6 +10,7 @@ export class AppComponent {
   player: YT.Player;
   private id: string = 'qDuKsiwS5xw';
   values='abs';
+  history: string[]=['yo'];
 
   savePlayer(player) {
     this.player = player;
@@ -20,6 +21,8 @@ export class AppComponent {
   }
   onEnter(value:string){   
     
-    this.player.loadVideoByUrl(value);}
+    this.player.loadVideoByUrl(value);
+    this.history.push(value)}
+  
                         
 }

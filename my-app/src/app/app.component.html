@@ -1,8 +1,17 @@
-<div>
+<div align="center">
 <input #box (keydown.enter)="onEnter(box.value)"
         type="text" name="video_link"
         align="center">
-  <p>{{values}}</p>
+        
+</div>
+
+<div align="left">
+<ul class="nav nav-sidebar">
+   <li *ngFor="let item of history" (click)=liClicked(this)>
+   <button href="#">{{ item }}</button>
+      
+    </li>
+</ul>
 </div>
 <div 
      align="center">
