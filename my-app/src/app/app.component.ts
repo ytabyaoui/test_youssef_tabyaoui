@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'My first app';
+  player: YT.Player;
+  private id: string = 'qDuKsiwS5xw';
+  values='abs';
+
+  savePlayer(player) {
+    this.player = player;
+    console.log('player instance', player);
+  }
+  onStateChange(event) {
+    console.log('player state', event.data);
+  }
+  onEnter(value:string){   
+    
+    this.player.loadVideoByUrl(value);}
+                        
 }
