@@ -2,17 +2,27 @@
 <input #box (keydown.enter)="onEnter(box.value)"
         type="text" name="video_link"
         align="center">
-        
+<p>{{values}}</p>        
 </div>
 
 <div align="left">
 <ul class="nav nav-sidebar">
-   <li *ngFor="let item of history" (click)=liClicked(this)>
+   <li *ngFor="let item of history; let i=index" (click)=hiClicked(i)>
    <button href="#">{{ item }}</button>
       
     </li>
 </ul>
 </div>
+<div align="right">
+<button (click)=bookmark()>Bookmark</button>
+<ul class="nav nav-sidebar">
+   <li *ngFor="let bookmark of bookmarks; let j=index" (click)=bClicked(j)>
+   <button >{{ bookmark }}</button>
+      
+    </li>
+</ul>
+</div>
+
 <div 
      align="center">
      
